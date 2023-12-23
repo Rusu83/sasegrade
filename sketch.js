@@ -1,4 +1,4 @@
-var stare=0;
+var stare=2;
 var inp,inb;
 var inc,listainc=[5],listaincl;
 var fin,listafin=[5],listafinl;
