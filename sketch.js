@@ -1,4 +1,4 @@
-var stare=2;
+var stare=1;
 var inp,inb;
 var inc,listainc=[5],listaincl;
 var fin,listafin=[5],listafinl;
@@ -12,7 +12,7 @@ var linkuri=[],tati=[],viz=[];
 
 function setup() {
   createCanvas(window.innerWidth,window.innerHeight);
-  inb=createButton('Continuare');
+  inb=createButton('NEXT');
   inb.mouseClicked(buton);
   inb.position((width-inb.width)/2,height-2*inb.height);
   inp=createInput();
@@ -76,20 +76,20 @@ function ceface(){
 
 function cummerge(){
   inp.value('');
-  text("Aplicația cere utilizatorului două titluri de articole\nale site-ului Wikipedia și oferă cel mai scurt drum\nde la prima spre ultima apăsând pe hyperlink-urile care apar pe drum.\n\nLimitațiile aplicației sunt că poate parcurge doar pagini în engleză ale site-ului\nși că durata căutarii variază mult în funcție de articolele alese.",width/2,height/3);
+  text("See the shortest path between 2 Wikipedia articles.\n(As long as they are not immediately connected)",width/2,height/3);
 }
 
 function asteapta(){
-  text("Așteptăm datele...",width/2,height/2);
+  text("Loading...",width/2,height/2);
 }
 
 function rabdare(){
   inp.value('');
-  text('Ori nu ai destulă răbdare,\nori ai introdus o valoare nepotrivită.',width/2,height/2);
+  text('Either wait longer,\nor there is an issue with your input.',width/2,height/2);
 }
 
 function proces(){
-  text("S-au scanat\n"+i*500+"\nde linkuri...",width/2,height/2);
+  text(i*500+"\nHyperlinks scanned...",width/2,height/2);
 }
 
 function gasit(){
@@ -116,7 +116,7 @@ function gata(){
 }
 
 function alegeinc(){
-  text("Introdu în caseta de text primul articol\nși apasă butonul.\n(Titlul articolului trebuie scris în engleză dar nu e necesar să fie scris exact)",width/2,height/3);
+  text("Input text in the box below to search on Wikipedia.",width/2,height/3);
 }
 
 function incarcainc(){
@@ -137,7 +137,7 @@ function listeazainc(dateinc){
 }
 
 function selecteazainc(){
-  text('Apasă pe tasta numerică corespunzătoare articolului dorit.',width/2,width/49);
+  text('Press the keyoard button for the desired article.',width/2,width/49);
   for(i=0;i<listaincl;i++){
     rect(width/2,height*((i+1)/7),width*(7/10),height/8);
     text((i+1)+')',width/2-width*(7/21),height*((i+1)/7));
@@ -146,7 +146,7 @@ function selecteazainc(){
 }
 
 function alegefin(){
-  text("Introdu în caseta de text articolul destinație\nși apasă butonul.\n(Titlul articolului trebuie scris în engleză dar nu e necesar să fie scris exact)",width/2,height/3);
+  text("Type text below to search on Wikipedia",width/2,height/3);
 }
 
 function incarcafin(){
@@ -167,7 +167,7 @@ function listeazafin(datefin){
 }
 
 function selecteazafin(){
-  text('Apasă pe tasta numerică corespunzatoare articolului dorit.',width/2,width/49);
+  text('Press the keyoard button for the desired article.',width/2,width/49);
   for(i=0;i<listafinl;i++){
     rect(width/2,height*((i+1)/7),width*(7/10),height/8);
     text((i+1)+')',width/2-width*(7/21),height*((i+1)/7));
@@ -184,7 +184,7 @@ function cautainspate(date){
 
 function drum(){
   if(inc==fin)
-    text('Gradul este 0, ai ales același articol pentru ambele capete.',width/2,height/2);
+    text('You chose the same article twice',width/2,height/2);
   else{
     i=0;
     tati[0]=-1;
